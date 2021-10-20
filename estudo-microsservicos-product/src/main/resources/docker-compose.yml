@@ -1,0 +1,15 @@
+services:
+ elasticsearch:
+   image: elasticsearch:6.6.2
+   container_name: elasticsearch
+   environment:
+     - "discovery.type=single-node"
+     - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+   ports:
+     - 9200:9200
+     - 9300:9300
+ redis:
+   image: redis:6.2.6
+   container_name: redis
+   ports:
+     - 6379:6379
